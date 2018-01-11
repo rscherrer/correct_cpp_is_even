@@ -8,7 +8,7 @@ master|[![Build Status](https://travis-ci.org/richelbilderbeek/correct_cpp_is_ev
 
 ## Goals
 
- * Respond to exceptions
+ * First use of std::regex
 
 ## Prerequisites
 
@@ -17,19 +17,17 @@ master|[![Build Status](https://travis-ci.org/richelbilderbeek/correct_cpp_is_ev
 
 ## Exercise
 
-Write a command-line interface (CLI) program that determines if its argument is an odd number.
+Write a command-line interface (CLI) program that determines if its argument is an even number.
 
-If there are more arguments supplied, ignore the ones beyond the first
+If there are more arguments supplied, exit the program.
 
 Call to `is_even`|Output|Exit status
 ---|---|---
 `./is_even`|Any|1
-`./is_even 1`|`true` (with newline)|0
-`./is_even 2`|`false` (with newline)|0
+`./is_even 12345678901234567890`|`true` (with newline)|0
+`./is_even 12345678901234567891`|`false` (with newline)|0
 `./is_even nonsense`|Any|1
-`./is_even 12345678901234567890`|`true`|0
-`./is_even 12345678901234567891`|`false`|0
-`./is_even 2 1`|`false` (with newline)|0
+`./is_even 2 1`|Any|1
 
 This is the code you start with:
 
