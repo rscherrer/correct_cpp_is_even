@@ -40,7 +40,7 @@ main(argc, argv)
 
  * You cannot use [std::stoi](https://github.com/richelbilderbeek/cpp/blob/master/content/CppStdStoi.md), as it will not convert `12345678901234567890`
    to integer
- * Instead, you could you read the [std::string](https://github.com/richelbilderbeek/cpp/blob/master/content/CppStdString.md)
+ * Instead, you should use [std::regex](https://github.com/richelbilderbeek/cpp/blob/master/content/CppStdRegex.md)
 
 ## External links
 
