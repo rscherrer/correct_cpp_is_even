@@ -41,6 +41,7 @@ main(argc, argv)
  * You cannot use [std::stoi](https://github.com/richelbilderbeek/cpp/blob/master/content/CppStdStoi.md), as it will not convert `12345678901234567890`
    to integer
  * Instead, you should use [std::regex](https://github.com/richelbilderbeek/cpp/blob/master/content/CppStdRegex.md)
+ * An even number is a regular expression of one or more digits, that may or may not start with a minus
 
 ## External links
 
