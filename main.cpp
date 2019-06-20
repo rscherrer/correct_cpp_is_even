@@ -44,6 +44,27 @@ int doMain(const std::vector<std::string> &args)
 }
 
 
+/// Function to test the task performing behavior of the program
+void testUse()
+{
+    
+}
+
+
+/// Function to test the error handling behavior of the program
+void testAbuse()
+{
+    
+}
+
+/// Function to test the program
+void test()
+{
+    testUse();
+    testAbuse();
+}
+
+
 /// Program to determine if a number is even
 int main(int argc, char * argv[])
 {
@@ -51,6 +72,9 @@ int main(int argc, char * argv[])
     // Preparation
     const std::vector<std::string> args(argv, argv + argc);
     
+    // Test the program
+    test();
+
     // Run the program
     return doMain(args);
 
