@@ -1,5 +1,56 @@
+#include <stdexcept>
+#include <vector>
+#include <iostream>
+
+
+/// Function to determine if a string is a number
+bool isNumber(const std::string &argument) noexcept
+{
+    return true;
+}
+
+
+/// Function to extract the last digit of a series of digits and convert it to an integer
+int lastDigitToInt(const std::string &argument) noexcept
+{
+    return 1;
+}
+
+
 /// Program to determine if a number is even
 int main(int argc, char * argv[])
 {
-    
+
+    // Preparation
+    const std::vector<std::string> args(argv, argv + argc);
+
+    try{
+
+        // There should be exactly one argument provided
+        if (argc != 2) throw std::runtime_error("Error: Invalid number of arguments.");
+
+        // The argument should be a number
+        if (!isNumber(args[1u])) throw std::runtime_error("Error: Argument is not a number.");
+
+        // Extract the last digit
+        const int lastDigit = lastDigitToInt(args[1u]);
+
+        // Is the last digit even?
+        bool isEven = false;
+        if (lastDigit % 2 == 0) {
+            isEven = true;
+        }
+
+        // Show the result
+        isEven ? std::cout << "true" : std::cout << "false";
+
+    }
+    catch (const std::exception &err)
+    {
+        std::cout << err.what() << '\n';
+        return 1;
+    }
+
+    return 0;
+
 }
