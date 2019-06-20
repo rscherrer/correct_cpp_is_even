@@ -3,6 +3,7 @@
 #include <iostream>
 #include <regex>
 #include <string>
+#include <cassert>
 
 
 /// Function to determine if a string is a number
@@ -47,14 +48,19 @@ int doMain(const std::vector<std::string> &args)
 /// Function to test the task performing behavior of the program
 void testUse()
 {
-    
+    assert(doMain( { "is_even", "1" } ) == 0);
+    assert(doMain( { "is_even", "2" } ) == 0);
+    assert(doMain( { "is_even", "1843515154545154871232655148484" } ) == 0);
+    assert(doMain( { "is_even", "-5" } ) == 0);
 }
 
 
 /// Function to test the error handling behavior of the program
 void testAbuse()
 {
-    
+    assert(doMain( { "is_even"} ) == 1);
+    assert(doMain( { "is_even", "nonsense" } ) == 1);
+    assert(doMain( { "is_even", "1", "2" } ) == 1);
 }
 
 /// Function to test the program
@@ -71,7 +77,7 @@ int main(int argc, char * argv[])
 
     // Preparation
     const std::vector<std::string> args(argv, argv + argc);
-    
+
     // Test the program
     test();
 
