@@ -1,12 +1,18 @@
 #include <stdexcept>
 #include <vector>
 #include <iostream>
+#include <regex>
+#include <string>
 
 
 /// Function to determine if a string is a number
 bool isNumber(const std::string &argument) noexcept
 {
-    return true;
+
+    // A number is a series of one or more digits that may or may not start with a minus
+    const std::regex numberRgx("(\\-|)[[:digit:]]+");
+
+    return std::regex_match(argument, numberRgx);
 }
 
 
