@@ -16,13 +16,6 @@ bool isNumber(const std::string &argument) noexcept
 }
 
 
-/// Function to extract the last digit of a series of digits and convert it to an integer
-int lastDigitToInt(const std::string &argument) noexcept
-{
-    return 1;
-}
-
-
 /// Program to determine if a number is even
 int main(int argc, char * argv[])
 {
@@ -39,16 +32,10 @@ int main(int argc, char * argv[])
         if (!isNumber(args[1u])) throw std::runtime_error("Error: Argument is not a number.");
 
         // Extract the last digit
-        const int lastDigit = lastDigitToInt(args[1u]);
+        const int lastDigit = int(args[1u].back());
 
-        // Is the last digit even?
-        bool isEven = false;
-        if (lastDigit % 2 == 0) {
-            isEven = true;
-        }
-
-        // Show the result
-        isEven ? std::cout << "true" : std::cout << "false";
+        // Is the last digit even? Show the result
+        lastDigit % 2 == 0 ? std::cout << "true" : std::cout << "false";
 
     }
     catch (const std::exception &err)
