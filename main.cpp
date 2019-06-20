@@ -16,17 +16,13 @@ bool isNumber(const std::string &argument) noexcept
 }
 
 
-/// Program to determine if a number is even
-int main(int argc, char * argv[])
+/// Function to run the program
+int doMain(const std::vector<std::string> &args)
 {
-
-    // Preparation
-    const std::vector<std::string> args(argv, argv + argc);
-
     try{
 
         // There should be exactly one argument provided
-        if (argc != 2) throw std::runtime_error("Error: Invalid number of arguments.");
+        if (args.size() != 2u) throw std::runtime_error("Error: Invalid number of arguments.");
 
         // The argument should be a number
         if (!isNumber(args[1u])) throw std::runtime_error("Error: Argument is not a number.");
@@ -45,5 +41,17 @@ int main(int argc, char * argv[])
     }
 
     return 0;
+}
+
+
+/// Program to determine if a number is even
+int main(int argc, char * argv[])
+{
+
+    // Preparation
+    const std::vector<std::string> args(argv, argv + argc);
+    
+    // Run the program
+    return doMain(args);
 
 }
