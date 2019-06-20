@@ -32,7 +32,7 @@ int doMain(const std::vector<std::string> &args)
         const int lastDigit = int(args[1u].back());
 
         // Is the last digit even? Show the result
-        lastDigit % 2 == 0 ? std::cout << "true" : std::cout << "false";
+        lastDigit % 2 == 0 ? std::cout << "true\n" : std::cout << "false\n";
 
     }
     catch (const std::exception &err)
